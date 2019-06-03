@@ -1,0 +1,82 @@
+.site-header {
+    @include flex(flex-start, center);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 9;
+
+    color: #FFF;
+
+    .logo {
+        font-size: 25px;
+        letter-spacing: .1rem;
+
+        .icon {
+            margin-right: 10px
+        }
+    }
+
+    &__inner {
+        &--right {
+            margin-left: auto;
+        }
+    }
+}
+
+.header-nav {
+    list-style: none;
+
+    &__item {
+        @include flex(flex-start, center);
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: 7px 15px;
+        font-size: 14px;
+        opacity: .8;
+        transition: all .2s ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background: #B20838;
+            left: 15px;
+            right: 15px;
+            bottom: 0;
+            transform-origin: center;
+            transform: scale(0, 1);
+
+            transition: all .2s ease-in-out;
+        }
+
+        &:hover {
+            opacity: 1;
+            &::after {         
+                transform: scale(1);
+            }
+        }
+
+        &--phone {
+            font-size: 18px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .icon {
+            margin-right: 5px;
+
+            &.fa-phone-volume {
+                transform: rotate(-25deg)
+            }
+        }
+    }
+}

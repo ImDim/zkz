@@ -1,0 +1,191 @@
+.page-hero {
+    position: relative;
+    color: #FFF;
+
+    margin-bottom: 160px;
+
+    &__inner {
+        max-width: 800px;
+    }
+    &__title {
+        margin-bottom: 25px;
+        font-size: 55px;
+        line-height: 60px;
+        font-weight: 600;
+        text-align: center;
+        font-family: 'Proxima Nova Lt', sans-serif;
+    }
+
+    &__desc {
+        font-size: 26px;
+        line-height: 35px;
+        font-weight: 400;
+        text-align: center;
+        color: #FFF;
+        opacity: .9;
+    }
+}
+
+.hero-menu {
+    @include flex(center, flex-start);
+    @include list-unstyled;
+    width: 100%;
+    position: absolute;
+    bottom: -136px;
+
+    /* &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 170px;
+        bottom: 30px;
+        display: block;
+        width: 60px;
+        height: 60px;
+        background: no-repeat center {
+            size: cover;
+            color: #dfe4ea;
+        }
+        -webkit-mask-image: url(../assets/images/icons/branch.svg);
+        mask-image: url(../assets/images/icons/branch.svg);
+    }
+
+    &::before {
+        transform: rotateY(180deg)
+    }
+
+    &::after {
+        left: auto;
+        right: 170px;
+    } */
+
+    &__item {
+        position: relative;
+        width: calc(25% - 2px);
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #ECECEC;
+        margin-right: -1px;
+        margin-bottom: -1px;
+
+        &:hover {
+            z-index: 1;
+            border-color: #FFF;
+        }
+    }
+
+    &__link {
+        @include flex(flex-start, center, nowrap);
+        position: relative;
+        padding: 30px;
+        height: 135px;
+        box-sizing: border-box;
+        
+        color: #404040;
+        background: #FFF;
+
+        &:hover {
+            box-shadow: 0 18px 41px 0 rgba(49,6,18,0.1);
+            z-index: 1;
+
+            .hero-menu__icon {
+                &::before {
+                    background-color: #fff;
+                }
+
+                &::after {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include flex(center, center);
+        position: relative;
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        border-radius: 100%;
+        background: #f6f8fb;
+        margin-right: 20px;
+
+        &::before {
+            content: '';
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            background: no-repeat center {
+                size: cover;
+                color: #adb7c7;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(0);
+            z-index: 0;
+            border-radius: 100%;
+            background: #B20838;
+        }
+
+        &::before, &::after {
+            transition: all .2s ease-in-out;
+        }
+
+        &--file {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/file.svg);
+                mask-image: url(../assets/images/icons/hero-menu/file.svg);
+            }
+        }
+        &--fire {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/fire.svg);
+                mask-image: url(../assets/images/icons/hero-menu/fire.svg);
+            }
+        }
+        &--bank {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/bank.svg);
+                mask-image: url(../assets/images/icons/hero-menu/bank.svg);
+            }
+        }
+        &--growth {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/growth.svg);
+                mask-image: url(../assets/images/icons/hero-menu/growth.svg);
+            }
+        }
+        &--student {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/student.svg);
+                mask-image: url(../assets/images/icons/hero-menu/student.svg);
+            }
+        }
+        &--diploma {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
+                mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
+            }
+        }
+        &--team {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/team.svg);
+                mask-image: url(../assets/images/icons/hero-menu/team.svg);
+            }
+        }
+        &--engineer {
+            &::before {
+                -webkit-mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
+                mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
+            }
+        }
+    }
+}
