@@ -1,2 +1,79 @@
 .site-content
-    h3.section-header Очень длинный заголовок секции
+    .wrapper
+        section.section
+            img.section__image(src="/assets/images/img1.jpg", alt="")
+            .section__inner
+                h3.section__header Описание деятельности компании
+                .section__desc Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis sed alias exercitationem in? Explicabo voluptates autem vero ea, rem animi omnis doloribus consequatur, est, quae porro incidunt ratione repellat.
+
+                a(href="#").btn.btn-primary.section__about-btn
+                    |Узнать больше
+                    i.icon.fas.fa-angle-right
+
+
+    section.section.section--right.section--bg
+        .section__inner
+            h3.section__header Описание деятельности компании
+            .section__desc Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis sed alias exercitationem in? Explicabo voluptates autem vero ea, rem animi omnis doloribus consequatur, est, quae porro incidunt ratione repellat.
+
+            a(href="#").btn.btn-primary.section__about-btn
+                |Узнать больше
+                i.icon.fas.fa-angle-right
+
+        img.section__image(src="/assets/images/img1.jpg", alt="")
+
+    section.advantages
+        .wrapper
+            h2.advantages__header
+                |Почему именно мы?
+
+            ul.advantages__list
+                li.advantages__item
+                    i.fas.fa-award.advantages__icon
+                    span.advantages__text
+                        |Оказываем самые лучшие услуги в мире
+
+                li.advantages__item
+                    i.fas.fa-award.advantages__icon
+                    span.advantages__text
+                        |Оказываем самые лучшие услуги в мире
+
+                li.advantages__item
+                    i.fas.fa-award.advantages__icon
+                    span.advantages__text
+                        |Оказываем самые лучшие услуги в мире
+
+                li.advantages__item
+                    i.fas.fa-award.advantages__icon
+                    span.advantages__text
+                        |Оказываем самые лучшие услуги в мире
+
+
+    section.contacts-section
+        .contacts-section__inner
+            .contacts-section__content
+                h3.contacts-section__header
+                    |Остались вопросы?
+
+                .contacts-section__desc
+                    |Напишите нам и мы свяжемся с Вами в ближайшее время
+
+                form(action="").contacts-form
+                    .contacts-form__row
+                        input.contacts-form__field(type="text" placeholder="Ваше имя")
+
+                    .contacts-form__row
+                        input.contacts-form__field(type="text" placeholder="E-mail")
+
+                    .contacts-form__row.contacts-form__row--agree.checkbox
+                        input(id="1" type="checkbox" checked).checkbox__field
+                        label(for="1").checkbox__checkbox
+                        |Я даю согласие на 
+                        a(href="#")
+                            |обработку моих персональных данных
+
+                    a(href="#").btn.btn-primary.contacts-form__submit
+                        i.icon.far.fa-envelope
+                        |Отправить
+
+

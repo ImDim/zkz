@@ -9,6 +9,28 @@
 
     color: #FFF;
 
+    &::before {
+        content: '';
+        position: absolute;
+        height: 70px;
+        left: 0;
+        right: 0;
+        background: #1059b6;
+        transition: all .2s ease-in-out;
+        transform: translateY(-70px)
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+    &--fixed {
+        &::before {
+            transform: translateY(0)
+        }
+    }
+
     .logo {
         font-size: 25px;
         letter-spacing: .1rem;
@@ -22,6 +44,12 @@
         &--right {
             margin-left: auto;
         }
+    }
+
+    &__copy {
+        @include flex(flex-start, center);
+        font-size: 14px;
+        color: #838b98; 
     }
 }
 
@@ -77,6 +105,15 @@
             &.fa-phone-volume {
                 transform: rotate(-25deg)
             }
+        }
+    }
+}
+
+
+.site-header--fixed {
+    .header-nav__link {
+        &::after {
+            background: #387ed8;
         }
     }
 }

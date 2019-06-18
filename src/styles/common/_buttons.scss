@@ -5,7 +5,6 @@
     box-shadow: none;
     border-radius: 4px;
     border: 1px solid transparent;
-    font-weight: bold;
     position: relative;
     outline: 0;
     padding: 0;
@@ -13,14 +12,13 @@
     cursor: pointer;
     line-height: 1;
     text-decoration: none;
-    text-transform: uppercase;
     vertical-align: middle;
     white-space: nowrap;
     transition: all 250ms;
 
-    height: 30px;
+    height: 50px;
     padding: 0 10px;
-    font-size: 11px;
+    font-size: 16px;
 
     color: inherit;
 
@@ -48,12 +46,12 @@
     }
 
     &-primary {
-        background: #dd6124;
+        background: #b6103f;
         color: #FFF;
 
         &:hover {
-            /* background: #235FC5;
-            color: #FFF; */
+            background: #960830;
+            box-shadow: 0 15px 20px -15px rgba(197,3,58,0.4);
         }
     }
 

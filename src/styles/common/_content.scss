@@ -1,5 +1,223 @@
-.section-header {
-    font-size: 24px;
-    line-height: normal;
-    font-family: 'Proxima Nova ExCn Lt', sans-serif;
+.section {
+    @include flex(center, flex-start);
+    padding: 80px 0;
+
+    &:first-child {
+        margin-bottom: 80px;
+    }
+
+    &--right {
+        .section__image {
+            margin-right: 0;
+            margin-left: 80px
+        }
+    }
+
+    &--bg {
+        background: #f5f9ff;
+    }
+
+    &__header {
+        font-size: 32px;
+        line-height: normal;
+        //font-family: 'Proxima Nova ExCn Lt', sans-serif;
+        color: #2b3b52;
+        margin-top: 0;
+    }
+
+    &__desc {
+        max-width: 400px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &__image {
+        max-width: 600px;
+        margin-right: 80px
+    }
+
+    &__about-btn {
+        margin-top: 40px;
+        width: 200px;
+
+        &:hover {
+            .icon {
+                transform: translateX(5px)
+            }
+        }
+
+        .icon {
+            line-height: 11px;
+            transition: all .5s ease;
+        }
+    }
+
+    &__inner {
+    }
+}
+
+.advantages {
+    position: relative;
+    overflow: hidden;
+    background: url(../assets/images/advantages.jpg) no-repeat center;
+    background-size: cover;
+    color: #FFF;
+    padding: 80px 0;
+    margin: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+
+    &__header {
+        font-size: 32px;
+        line-height: normal;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    &__list {
+        @include flex(center, center);
+        @include list-unstyled;
+        margin-top: 100px;
+    }
+
+    &__item {
+        @include flex(center, center);
+        flex-direction: column;
+        width: 180px;
+        text-align: center;
+        margin: 0 40px;
+    }
+
+    &__icon {
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+}
+
+.contacts-section {
+    padding: 80px 0;
+    background: #f5f9ff;
+
+    &__header {
+        font-size: 32px;
+        line-height: normal;
+        color: #2b3b52;
+        margin-top: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    &__desc {
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        color: #7f92af;
+    }
+
+    &__inner {
+        padding: 5px;
+        max-width: 800px;
+        margin: 0 auto;
+        background: url(../assets/images/contacts-section__inner.png);
+    }
+
+    &__content {
+        padding: 40px;
+        background: #FFF;
+    }
+}
+
+.contacts-form {
+    max-width: 400px;
+    margin: 0 auto;
+
+    &__row {
+        margin-top: 25px;
+
+        &--agree {
+            @include flex(center, center);
+            font-size: 13px;
+            color: #7f92af;
+        }
+    }
+
+    &__field {
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        border: 1px solid #eff4f9;
+        border-radius: 99px;
+        padding: 0 25px;
+        background: #f5f9ff;
+        outline: none;
+        color: #2b3b52;
+
+        &:focus {
+            box-shadow: 0 5px 4px rgba(0, 0, 0, 0.01)
+        }
+
+        &::placeholder {
+            color: #a6afbd;
+        }
+    }
+
+    &__hidden {
+        display: none;
+    }
+
+    &__submit {
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 25px;
+
+        .icon {
+            font-size: 16px;
+        }
+    }
+}
+
+.checkbox {
+    &__field {
+        display: none;
+    }
+
+    &__checkbox {
+        @include flex(center, center);
+        width: 18px;
+        height: 18px;
+        border-radius: 99px;
+        border: 1px solid #c9d4e6;
+        margin-right: 7px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            border-color: #b6103f;
+        }
+
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: #b6103f;
+            transform: scale(0);
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    &__field:checked + &__checkbox {
+        &::before {
+            transform: scale(1);
+        }
+    }
 }

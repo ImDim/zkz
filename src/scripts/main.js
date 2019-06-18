@@ -3,28 +3,17 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 $(function() {
 
-    // Нажимаем кнопку "Начать"
-    $('.js-recipe-start').on('click', function() {
-
-        // Прячем кнопку "Начать"
-        $(this).addClass('recipe-start--hidden');
-
-        // Показываем кнопку "Удачи!"
-        $('.js-recipe-started').addClass('recipe-start--visible');
-
-        // Показываем шаги
-        $('.js-steps').addClass('steps--visible');
-
-        $('.js-recipe-content').addClass('recipe-content--inline');
-    });
+    function headerScrolled() {
+        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrolled > 200) {
+            $('.js-site-header').addClass('site-header--fixed');
+        } else {
+            $('.js-site-header').removeClass('site-header--fixed');
+        }
+    }
 
     // Обработчик по шагам
-    $(document).on('click', '.js-steps', function(evt) {
-        var $item = $(evt.target).closest('.steps-item');
-        if ( $item.length && $item.hasClass('active') ) {
-            $item.addClass('done').removeClass('active');
+    window.onscroll = headerScrolled;
 
-            $item.nextAll('.steps-item').eq(0).addClass('active');
-        }
-    });
+    window.onload = headerScrolled;
 });
