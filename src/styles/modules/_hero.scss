@@ -281,6 +281,13 @@
             transition: all .2s ease-in-out;
         }
 
+        &::before {
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+
         &--file {
             &::before {
                 @media all and (min-width: $mobileWidth) {
