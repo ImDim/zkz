@@ -7,6 +7,10 @@
         size: cover;
     }
 
+    @media all and (max-width: 400px) {
+        height: 100vh;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -17,10 +21,12 @@
         background: rgba(7, 31, 62, 0.55);
     }
 
-    margin-bottom: 220px;
-
     &__inner {
         max-width: 800px;
+
+        @media all and (max-width: 400px) {
+            padding: 0 10px;
+        }
     }
     &__title {
         margin-bottom: 25px;
@@ -30,6 +36,14 @@
         text-align: center;
         font-family: 'Proxima Nova Lt', sans-serif;
         text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
+        @media all and (max-width: 600px) {
+            font-size: 40px;
+            line-height: 1.2em;
+        }
+        @media all and (max-width: 400px) {
+            font-size: 32px;
+        }
     }
 
     &__desc {
@@ -39,6 +53,11 @@
         text-align: center;
         color: #FFF;
         opacity: .9;
+
+        @media all and (max-width: 400px) {
+            font-size: 19px;
+            line-height: 1.2em;
+        }
     }
 }
 
@@ -47,33 +66,23 @@
     @include list-unstyled;
     padding: 0 25px;
     width: 100%;
-    position: absolute;
-    bottom: -136px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -136px;
 
-    /* &::before, &::after {
-        content: '';
-        position: absolute;
-        left: 170px;
-        bottom: 30px;
-        display: block;
-        width: 60px;
-        height: 60px;
-        background: no-repeat center {
-            size: cover;
-            color: #dfe4ea;
-        }
-        -webkit-mask-image: url(../assets/images/icons/branch.svg);
-        mask-image: url(../assets/images/icons/branch.svg);
+    @media all and (max-width: 1280px) {
+        margin-top: -182px;
     }
 
-    &::before {
-        transform: rotateY(180deg)
+    @media all and (max-width: 400px) {
+        padding: 0;
+        margin: 0;
+        margin-left: 1px;
+        margin-right: 2px;
+        margin-top: -140px;
+        width: auto;
+        //width: calc(100% + 4px);
     }
-
-    &::after {
-        left: auto;
-        right: 170px;
-    } */
 
     &__item {
         position: relative;
@@ -88,6 +97,14 @@
             z-index: 1;
             border-color: #FFF;
         }
+
+        @media all and (max-width: 940px) {
+            width: calc(50% - 2px);
+
+            &:nth-last-child(2), &:last-child {
+                width: calc(50% - 2px);
+            }
+        }
     }
 
     &__link {
@@ -100,23 +117,121 @@
         color: #404040;
         background: #FFF;
 
+        @media all and (max-width: 1280px) {
+            padding: 20px 15px;
+            flex-direction: column;
+            font-size: 14px;
+            text-align: center;
+            min-height: 180px;
+        }
+        @media all and (max-width: 400px) {
+            height: 200px;
+        }
+
         &:hover {
+            $mobileWidth: 600px;
             box-shadow: 0 18px 41px 0 rgba(49,6,18,0.1);
             z-index: 1;
 
             .hero-menu__icon {
                 &::before {
                     background-color: #fff;
+                    @media all and (max-width: $mobileWidth) {
+                        background-color: transparent;
+                    }
                 }
 
                 &::after {
                     transform: scale(1);
                 }
             }
+
+
+            .hero-menu__icon--file {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/file.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--fire {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/fire.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--bank {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/bank.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--growth {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/growth.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--student {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/student.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--diploma {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/diploma.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--team {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/team.png);
+                    }
+                    
+                }
+                
+            }
+            .hero-menu__icon--engineer {
+                &::before {
+                    
+                    @media all and (max-width: $mobileWidth) {
+                        background-image: url(../assets/images/icons/hero-menu/png/hover/engineer.png);
+                    }
+                    
+                }
+            }
         }
     }
 
     &__icon {
+        $mobileWidth: 600px;
+
         @include flex(center, center);
         position: relative;
         width: 90px;
@@ -125,6 +240,13 @@
         border-radius: 100%;
         background: #f6f8fb;
         margin-right: 20px;
+
+        @media all and (max-width: 1280px) {
+            margin-right: 0;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
 
         &::before {
             content: '';
@@ -136,6 +258,9 @@
             background: no-repeat center {
                 size: cover;
                 color: #adb7c7;
+            }
+            @media all and (max-width: $mobileWidth) {
+                background-color: transparent;
             }
         }
 
@@ -158,50 +283,105 @@
 
         &--file {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/file.svg);
-                mask-image: url(../assets/images/icons/hero-menu/file.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/file.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/file.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/file.png);
+                }
+                
             }
+            
         }
         &--fire {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/fire.svg);
-                mask-image: url(../assets/images/icons/hero-menu/fire.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/fire.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/fire.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/fire.png);
+                }
+                
             }
+            
         }
         &--bank {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/bank.svg);
-                mask-image: url(../assets/images/icons/hero-menu/bank.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/bank.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/bank.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/bank.png);
+                }
+                
             }
+            
         }
         &--growth {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/growth.svg);
-                mask-image: url(../assets/images/icons/hero-menu/growth.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/growth.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/growth.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/growth.png);
+                }
+                
             }
+            
         }
         &--student {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/student.svg);
-                mask-image: url(../assets/images/icons/hero-menu/student.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/student.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/student.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/student.png);
+                }
+                
             }
+            
         }
         &--diploma {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
-                mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/diploma.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/diploma.png);
+                }
+                
             }
+            
         }
         &--team {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/team.svg);
-                mask-image: url(../assets/images/icons/hero-menu/team.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/team.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/team.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/team.png);
+                }
+                
             }
+            
         }
         &--engineer {
             &::before {
-                -webkit-mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
-                mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
+                @media all and (min-width: $mobileWidth) {
+                    -webkit-mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
+                    mask-image: url(../assets/images/icons/hero-menu/engineer.svg);
+                }
+                @media all and (max-width: $mobileWidth) {
+                    background-image: url(../assets/images/icons/hero-menu/png/engineer.png);
+                }
+                
             }
         }
     }

@@ -1,13 +1,16 @@
 header.site-header.js-site-header
     .wrapper.flex.jc-start.ai-center
+        .burger.js-header-burger
+            span
         a(href="#").logo.flex.flex-center
-            i.icon.fab.fa-phoenix-squadron
+            i.icon
+            //i.icon.fab.fa-phoenix-squadron
             span.logo-text 
-                span Site
-                |Name
+                |Техника
+                span Безопасности
 
-        .site-header__inner.site-header__inner--right
-            ul.header-nav.flex.jc-start.ai-center
+        .site-header__inner.site-header__inner--right.flex.jc-start.ai-center.flex-nowrap
+            ul.header-nav.flex.jc-start.ai-center.js-header-nav
                 li.header-nav__item
                     a(href="#").header-nav__link Услуги
 
@@ -20,9 +23,10 @@ header.site-header.js-site-header
                 li.header-nav__item
                     a(href="#").header-nav__link Контакты
 
-                li.header-nav__item.header-nav__item
-                    a(href="#").header-nav__link.header-nav__link--phone 
-                        i.icon.fas.fa-phone-volume
+            .header-nav__item
+                a(href="#").header-nav__link.header-nav__link--phone 
+                    i.icon.fas.fa-phone-volume
+                    span.text
                         |+7 844 777-77-77
 
 

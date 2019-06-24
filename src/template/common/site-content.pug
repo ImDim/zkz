@@ -1,7 +1,19 @@
 .site-content
     .wrapper
         section.section
-            img.section__image(src="/assets/images/img1.jpg", alt="")
+            .wrapper.section__flex-container
+                img.section__image(src="/assets/images/img1.jpg", alt="")
+                .section__inner
+                    h3.section__header Описание деятельности компании
+                    .section__desc Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis sed alias exercitationem in? Explicabo voluptates autem vero ea, rem animi omnis doloribus consequatur, est, quae porro incidunt ratione repellat.
+
+                    a(href="#").btn.btn-primary.section__about-btn
+                        |Узнать больше
+                        i.icon.fas.fa-angle-right
+
+
+    section.section.section--right.section--bg
+        .wrapper.section__flex-container
             .section__inner
                 h3.section__header Описание деятельности компании
                 .section__desc Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis sed alias exercitationem in? Explicabo voluptates autem vero ea, rem animi omnis doloribus consequatur, est, quae porro incidunt ratione repellat.
@@ -10,17 +22,7 @@
                     |Узнать больше
                     i.icon.fas.fa-angle-right
 
-
-    section.section.section--right.section--bg
-        .section__inner
-            h3.section__header Описание деятельности компании
-            .section__desc Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis sed alias exercitationem in? Explicabo voluptates autem vero ea, rem animi omnis doloribus consequatur, est, quae porro incidunt ratione repellat.
-
-            a(href="#").btn.btn-primary.section__about-btn
-                |Узнать больше
-                i.icon.fas.fa-angle-right
-
-        img.section__image(src="/assets/images/img1.jpg", alt="")
+            img.section__image(src="/assets/images/img1.jpg", alt="")
 
     section.advantages
         .wrapper

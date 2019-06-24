@@ -1,15 +1,38 @@
 .section {
-    @include flex(center, flex-start);
     padding: 80px 0;
+
+    @media all and (max-width: 400px) {
+        padding: 20px 0;
+    }
+
+    &__flex-container {
+        @include flex(center, flex-start, nowrap);
+
+        @media all and (max-width: 940px) {
+            flex-wrap: wrap;
+        }
+    }
 
     &:first-child {
         margin-bottom: 80px;
+        @media all and (max-width: 940px) {
+            margin-bottom: 0;
+        }
+        @media all and (max-width: 600px) {
+            padding-top: 0;
+            margin-top: 0;
+        }
     }
 
     &--right {
         .section__image {
             margin-right: 0;
-            margin-left: 80px
+            margin-left: 80px;
+
+            @media all and (max-width: 940px) {
+                margin: 0 auto;
+                margin-top: 20px;
+            }
         }
     }
 
@@ -23,17 +46,40 @@
         //font-family: 'Proxima Nova ExCn Lt', sans-serif;
         color: #2b3b52;
         margin-top: 0;
+
+        @media all and (max-width: 600px) {
+            font-size: 24px;
+            line-height: normal;
+        }
+    }
+
+    &__inner {
+        flex-grow: 1;
     }
 
     &__desc {
         max-width: 400px;
         font-size: 18px;
         line-height: 28px;
+
+        @media all and (max-width: 600px) {
+            font-size: 16px;
+            line-height: 1.6em;
+        }
     }
 
     &__image {
-        max-width: 600px;
-        margin-right: 80px
+        max-width: 40%;
+        margin-right: 80px;
+
+        @media all and (max-width: 940px) {
+            max-width: 100%;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+        @media all and (max-width: 600px) {
+            margin-top: 60px;
+        }
     }
 
     &__about-btn {
@@ -50,9 +96,6 @@
             line-height: 11px;
             transition: all .5s ease;
         }
-    }
-
-    &__inner {
     }
 }
 
@@ -87,6 +130,9 @@
         @include flex(center, center);
         @include list-unstyled;
         margin-top: 100px;
+        @media all and (max-width: 940px) {
+            margin-top: 60px;
+        }
     }
 
     &__item {
@@ -95,6 +141,10 @@
         width: 180px;
         text-align: center;
         margin: 0 40px;
+
+        @media all and (max-width: 940px) {
+            margin-bottom: 40px;
+        }
     }
 
     &__icon {
@@ -104,8 +154,16 @@
 }
 
 .contacts-section {
-    padding: 80px 0;
+    padding: 80px;
     background: #f5f9ff;
+
+    @media all and (max-width: 940px) {
+        padding: 80px 40px;
+    }
+
+    @media all and (max-width: 540px) {
+        padding: 40px 20px;
+    }
 
     &__header {
         font-size: 32px;
@@ -114,6 +172,10 @@
         margin-top: 0;
         margin-bottom: 15px;
         text-align: center;
+
+        @media all and (max-width: 540px) {
+            font-size: 24px;
+        }
     }
 
     &__desc {
@@ -121,6 +183,10 @@
         line-height: 28px;
         text-align: center;
         color: #7f92af;
+
+        @media all and (max-width: 540px) {
+            font-size: 16px;
+        }
     }
 
     &__inner {
@@ -133,6 +199,10 @@
     &__content {
         padding: 40px;
         background: #FFF;
+
+        @media all and (max-width: 540px) {
+            padding: 20px;
+        }
     }
 }
 
@@ -218,6 +288,55 @@
     &__field:checked + &__checkbox {
         &::before {
             transform: scale(1);
+        }
+    }
+}
+
+.site-footer {
+    @include flex(flex-start, center);
+    font-size: 14px;
+    padding: 15px 0;
+
+    .wrapper {
+        @media all and (max-width: 715px) {
+            justify-content: center;
+        }
+    }
+
+    &__copy {
+        opacity: .7;
+
+        @media all and (max-width: 715px) {
+            order: 1;
+        }
+    }
+
+    &__inner {
+        &--right {
+            margin-left:  auto;
+            @media all and (max-width: 715px) {
+                margin-left: 0;
+                margin-bottom: 10px;
+                order: 0;
+            }
+        }
+    }
+
+    .footer-nav {
+        @include list-unstyled;
+
+        @media all and (max-width: 400px) {
+            justify-content: center;
+        }
+
+        &__item {
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+            @media all and (max-width: 400px) {
+                margin-left: 5px;
+                font-size: 13px;
+            }
         }
     }
 }
