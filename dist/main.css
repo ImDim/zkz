@@ -709,8 +709,6 @@ button.btn {
     @media all and (max-width: 940px) {
       .section__flex-container {
         flex-wrap: wrap; } }
-  .section:first-child {
-    margin-bottom: 80px; }
     @media all and (max-width: 940px) {
       .section:first-child {
         margin-bottom: 0; } }
@@ -718,11 +716,11 @@ button.btn {
       .section:first-child {
         padding-top: 0;
         margin-top: 0; } }
-  .section--right .section__image {
+  .section--article:ntgh-child(even) .section__image {
     margin-right: 0;
     margin-left: 80px; }
     @media all and (max-width: 940px) {
-      .section--right .section__image {
+      .section--article:ntgh-child(even) .section__image {
         margin: 0 auto;
         margin-top: 20px; } }
   .section--bg {
@@ -765,6 +763,9 @@ button.btn {
     .section__about-btn .icon {
       line-height: 11px;
       transition: all .5s ease; }
+
+.section--full .section__desc {
+  width: 100%; }
 
 .advantages {
   position: relative;
@@ -1044,7 +1045,7 @@ button.btn {
       width: 40px;
       height: 40px;
       display: block;
-      background: url(src/assets/images/logo.png) no-repeat center;
+      background: url(src/assets/images/logo-light.png) no-repeat center;
       background-size: contain; }
     .site-header .logo span {
       display: block;
@@ -1332,6 +1333,11 @@ button.btn {
       background: #B20838; }
     .hero-menu__icon::before, .hero-menu__icon::after {
       transition: all .2s ease-in-out; }
+    .hero-menu__icon::before {
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-repeat: no-repeat;
+      mask-position: center; }
     @media all and (min-width: 600px) {
       .hero-menu__icon--file::before {
         -webkit-mask-image: url(src/assets/images/icons/hero-menu/file.svg);
